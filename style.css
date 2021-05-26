@@ -1,0 +1,522 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    background-color:#373c3f;
+    font-family: monospace;
+    z-index: 10;
+}
+.logo{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 20px;
+    display: none;
+    z-index: 10;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    z-index: 10;
+}
+ul li{
+    list-style: none;
+    z-index: 10;
+}
+ul a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 10;
+}
+ul a:hover{
+    color: #0b9bb3;
+}
+.burger div{
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    margin: 7px;
+    z-index: 10;
+    padding: 0px -10px;
+    transition: 0.5s;
+}
+.burger{
+    position: absolute;
+    top: 0;
+    right: 8px;
+    margin: -8px;
+    width: 70px;
+    height: 53px;
+    position: absolute;
+    padding: 11px;
+    z-index: 10;
+    background-color: black;
+    display: none;
+}
+#burger-shower:checked ~ .burger div:nth-last-child(1){
+    transform: rotate(135deg) translatex(-9px) translatey(7px);
+}
+#burger-shower:checked ~ .burger div:nth-last-child(2){
+    opacity: 0;
+    transform: translatex(500px);
+}
+#burger-shower:checked ~ .burger div:nth-last-child(3){
+    transform: rotate(-135deg) translatey(-5px) translatex(-7px);
+}
+.burger-shower:checked ~ .burger-menu{
+    transform: translate(0px);
+}
+.burger-menu{
+    display: none;
+}
+.burger-shower{
+    display: none;
+}
+main{
+    height: 500px;
+    background: linear-gradient( to right,  #19b4c6, #088fa8);
+    position: relative;
+}
+main h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 80px;
+    left: 130px;
+}
+main a{
+    position: absolute;
+    top: 180px;
+    left: 130px;
+    color: #ffffffb0;
+    font-size: 18px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.button{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left:480px;
+    top: 175px;
+    border-left:3px solid white;
+    border-bottom:3px solid white ;
+    animation: arrow 2s infinite;
+}
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translate(-33px, 0) rotateZ(-134deg);
+    }
+    10%, 90% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;  
+        border-left: 7px solid white;
+        border-bottom: 7px solid white;
+        transform: translate(0, 0) rotateZ(-134deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(33px, 0) rotateZ(-134deg);
+    }
+}
+.parent-one{
+    display: flex;
+}
+.box-one{
+    width: 80%;
+    height: 200px;
+    background-color:#27212d;
+    position: relative;
+}
+.box-one h1{
+    color:#7c7387;
+    font-size: 18px;
+    position: absolute;
+    left: 130px;
+    top: 80px;
+}
+.box-two{
+    width: 30%;
+    height: 200px;
+    background-color:#bc3184;
+}
+.child{
+    border-left: 5px solid white;
+    border-bottom:5px solid white;
+    width: 20px;
+    height: 20px;
+    transform: rotate(230deg);
+    margin: 80px;
+    padding: 20px;
+    position: absolute;
+    right: 110px;
+    animation: arrow 2s infinite;
+}
+.parent-two{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.box-three{
+    width: 100%;
+    height: auto;
+    background-color: #5a0fa0;
+    position: relative;
+    display: inline-block;
+}
+.box-three .child-two{
+    border-left: 5px solid white;
+    border-bottom:5px solid white;
+    width: 20px;
+    height: 20px;
+    transform: rotate(230deg);
+    padding: 20px;
+    position: absolute;
+    left: 180px;
+    top: 170px;
+    animation: arrow 2s infinite;
+}
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.parent-three{
+    height: 600px;
+    padding: 70px;
+    background-color:#ebebeb;
+}
+.parent-three h1{
+    color: #0b919f;
+    margin-left:31px ;
+}
+.text-one{
+    column-count: 2;
+    padding: 30px;
+}
+.text-two{
+    column-count: 2;
+    padding: 30px;
+}
+@media all and (max-width:1024px){
+    nav ul{
+        width: 55%;
+    }
+    main{
+        height: 500px;
+    }
+    main h1{
+        top: 70px;
+        left: 40px;
+        font-size: 35px;
+    }
+    main a{
+        top: 180px;
+        left: 40px;
+        letter-spacing: 3px;
+    }
+    .button{
+        left:430px;
+    }
+    .box-one{
+        width: 80%;
+        height: 130px;
+        position: relative;
+    }
+    .box-one h1{
+        font-size: 17px;
+        position: absolute;
+        left: 20px;
+        top: 55px;
+    }
+    .box-two{
+        width: 35%;
+        height: 130px;
+    }
+    .child{
+        width: 10px;
+        height: 10px;
+        margin: 48px;
+        padding: 15px;
+        right:120px;
+    }
+    .box-three .child-two{
+        left: 110px;
+        top: 110px;
+    }
+}
+@media all and (max-width:980px){
+    nav ul{
+        width: 55%;
+    }
+    main{
+        height: 400px;
+    }
+    main h1{
+        letter-spacing: 3px;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        font-size: 30px;
+    }
+    main a{
+        top: 150px;
+        left: 30px;
+        letter-spacing: 3px;
+    }
+    .button{
+        left:370px;
+        top:143px
+    }
+    .box-one{
+        width: 80%;
+        height: 130px;
+        position: relative;
+    }
+    .box-one h1{
+        font-size: 15px;
+        left: 20px;
+        top: 55px;
+    }
+    .box-two{
+        width: 35%;
+        height: 130px;
+    }
+    .child{
+        margin: 48px;
+        padding: 17px;
+        right: 60px;
+    }
+    .box-three .child-two{
+        left: 55px;
+        top: 60px;
+    }
+}
+@media all and (max-width:640px){
+    nav ul{
+        display: none;
+    }
+    .logo{
+        display: block;
+        margin: 7px;
+        font-size: 13px;
+    }
+    .burger{
+        width: 60px;
+        right: 10px;
+        top:4px;
+        z-index: 10;
+        display: block;
+    }
+    .burger-menu{
+        position: absolute;
+        left: 0px;
+        top: 51px;
+        width: 100%;
+        height: 300px;
+        background-color: #373c3f;
+        transform: translatey(-340px);
+        transition: 0.5s ease-in;
+        z-index:1;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .burger-shower{
+        display: none;
+    }
+    .burger-shower:checked ~ .burger-menu{
+        transform: translate(0px);
+    }
+    main{
+        height: 350px;
+    }
+    main h1{
+        letter-spacing: 1px;
+        top: 50px;
+        left: 20px;
+        font-size: 21px;
+    }
+    main a{
+        top: 120px;
+        left: 20px;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    .box-one{
+        width: 65%;
+        height: 100px;
+    }
+    .box-one h1{
+        font-size: 10px;
+        position: absolute;
+        left: 7px;
+        top: 40px;
+    }
+    .button{
+        width: 20px;
+        height: 20px;
+        left:230px;
+        top:120px
+    }
+    .box-two{
+        width: 35%;
+        height: 100px;
+    }
+    .child{
+        margin: 40px;
+        padding: 10px;
+        right: 33px;
+    }
+    .parent-two{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .box-three{
+        height: 200px;
+    }
+    .box-three .child-two{
+        left: 120px;
+        top: 80px;
+    }
+    .parent-three{
+        height: auto;
+    }
+    .parent-three h1{
+        margin-left:10px ;
+    }
+    .text-one{
+        column-count: 2;
+        padding: 10px;
+    }
+    .text-two{
+        column-count: 2;
+        padding: 10px;
+    }
+}
+@media all and (max-width:320px){
+    nav ul{
+        display: none;
+    }
+    nav{
+        height: 40px;
+    }
+    .logo{
+        display: block;
+        margin: 10px;
+        font-size: 13px;
+    }
+    .burger{
+        display: block;
+        right: 10px;
+        top: 0;
+        right: 8px;
+        margin: -8px;
+        width: 50px;
+        height: 47px;
+        padding: 11px;
+    }
+    .burger-menu{
+        top: 41px;
+    }
+    .burger div{
+        width: 20px;
+        height: 2px;
+        margin: 7px;
+    }
+    #burger-shower:checked ~ .burger div:nth-last-child(1){
+        transform: rotate(135deg) translatex(-6px) translatey(7px);
+    }
+    #burger-shower:checked ~ .burger div:nth-last-child(3){
+        transform: rotate(-135deg) translatey(-7px) translatex(-7px);
+    }
+    main{
+        height: 250px;
+    }
+    main h1{
+        letter-spacing: 1px;
+        top: 40px;
+        left: 10px;
+        font-size: 10px;
+    }
+    main a{
+        top: 70px;
+        left: 10px;
+        letter-spacing: 1px;
+        font-size: 10px;
+    }
+    .button{
+        width: 12px;
+        height: 12px;
+        left:120px;
+        top:70px
+    }
+    .box-one h1{
+       font-size: 7px;
+       position: absolute;
+       left: 2px;
+       top: 43px;
+    }
+    .child{
+       margin: 40px;
+       padding: 5px;
+       right: 11px;
+    }
+    .box-three .child-two{
+       left: 120px;
+       padding: 15px;
+    }
+    .parent-two{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .box-three{
+        height: 200px;
+    }
+    .box-three .child-two{
+        left: 70px;
+        top: 80px;
+    }
+    .img-one{
+        height: 200px;
+        position: absolute;
+        left: 187px;
+    }
+    .img-two{
+        height: 200px;
+        position: absolute;
+        left: 405px; 
+    }
+    .parent-three{
+        padding: 10px;
+        height: auto;
+    }
+    .parent-three h1{
+        font-size: 20px;
+        margin-left:20px ;
+    }
+    .text-one{
+        column-count: 1;
+        padding: 15px;
+        font-size: 12px;
+    }
+    .text-two{
+        column-count: 1;
+        padding: 15px;
+        font-size: 12px;
+    }
+}
